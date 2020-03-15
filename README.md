@@ -1,5 +1,4 @@
-# mop-android-demo
-五行代码让APP运行小程序
+# 五行代码让APP运行小程序
 
 ## 1、在工程的build.gradle中需要配置的内容
 
