@@ -12,11 +12,11 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "APP_KEY", "\"22LyZEib0gLTQdU3MUauAWQrT5jdkwBnjD/4Rw9r+4kA\""
         // App Secret
-        buildConfigField "String", "APP_SECRET", "\"1a90cee1773badee\""
+        buildConfigField "String", "APP_SECRET", "\"cf59e5bf82c506bf\""
         // API服务地址
-        buildConfigField "String", "API_URL", "\"https://mp.finogeeks.com\""
+        buildConfigField "String", "API_URL", "\"http://10.104.58.240:8000\""
         // API服务前缀
-        buildConfigField "String", "API_PREFIX", "\"/api/v1/mop\""
+        buildConfigField "String", "API_PREFIX", "\"/api/v1/mop/\""
     }
     buildTypes {
         release {
@@ -38,6 +38,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    implementation 'com.finogeeks.lib:finapplet:2.0.77'
+    implementation 'com.finogeeks.lib:finapplet:+'
 
 }

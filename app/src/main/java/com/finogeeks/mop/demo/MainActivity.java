@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 .setAppKey("22LyZEib0gLTQdU3MUauAWQrT5jdkwBnjD/4Rw9r+4kA")
                 .setAppSecret("1a90cee1773badee")
                 .setApiUrl("https://mp.finogeeks.com")
-                .setApiPrefix("/api/v1/mop/")
+                .setApiPrefix("/api/v1/mop")
                 .setGlideWithJWT(false)
                 .build();
 // SDK初始化结果回调，用于接收SDK初始化状态
