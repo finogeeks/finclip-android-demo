@@ -10,13 +10,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "APP_KEY", "\"22LyZEib0gLTQdU3MUauAWQrT5jdkwBnjD/4Rw9r+4kA\""
-        // App Secret
-        buildConfigField "String", "APP_SECRET", "\"cf59e5bf82c506bf\""
-        // API服务地址
-        buildConfigField "String", "API_URL", "\"http://10.104.58.240:8000\""
-        // API服务前缀
-        buildConfigField "String", "API_PREFIX", "\"/api/v1/mop/\""
     }
     buildTypes {
         release {

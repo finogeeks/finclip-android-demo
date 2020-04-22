@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FinAppConfig config = new FinAppConfig.Builder()
-                .setAppKey("22LyZEib0gLTQdU3MUauAWQrT5jdkwBnjD/4Rw9r+4kA")
-                .setAppSecret("1a90cee1773badee")
+                .setAppKey("22LyZEib0gLTQdU3MUauAVUHSFDdTToYDWCqr0AgPGwA")
+                .setAppSecret("8c5c3c26420b7e66")
                 .setApiUrl("https://mp.finogeeks.com")
                 .setApiPrefix("/api/v1/mop")
                 .setGlideWithJWT(false)
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5e3c147a188211000141e9b1",
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5ea03fa563cb900001d73863",
                         new HashMap(){
                             {
                                 put("path","/pages/index/index");
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5e4d123647edd60001055df1");
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5ea0401463cb900001d73865");
             }
         });
 
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5e637a18cbfae4000170fa7a");
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5ea0412663cb900001d73867");
             }
         });
 
