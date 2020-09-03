@@ -5,15 +5,25 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.finogeeks.mop.demo"
-        minSdkVersion 26
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+        buildConfigField "String", "APP_KEY", "\"22LyZEib0gLTQdU3MUauAVUHSFDdTToYDWCqr0AgPGwA\""
+        // App Secret
+        buildConfigField "String", "APP_SECRET", "\"8c5c3c26420b7e66\""
+        // API服务地址
+        buildConfigField "String", "API_URL", "\"https://mp.finogeeks.com\""
+        // API服务前缀
+        buildConfigField "String", "API_PREFIX", "\"/api/v1/mop/\""
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -21,16 +31,22 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    packagingOptions {
+        // libsdkcore.so是被加固过的，不能被压缩，否则加载动态库时会报错
+        doNotStrip "*/x86/libsdkcore.so"
+        doNotStrip "*/x86_64/libsdkcore.so"
+        doNotStrip "*/armeabi-v7a/libsdkcore.so"
+        doNotStrip "*/arm64-v8a/libsdkcore.so"
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0'
+    implementation 'com.google.android.material:material:1.2.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    implementation 'com.finogeeks.lib:finapplet:+'
-
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.finogeeks.lib:finapplet:2.11.13'
 }
