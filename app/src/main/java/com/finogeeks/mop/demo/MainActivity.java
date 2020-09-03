@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
         canvasButton.setOnClickListener(v -> {
             Map<String, String> startParams = new HashMap<>();
             startParams.put("path", "/pages/index/index");
-            FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5e3c147a188211000141e9b1", startParams);
+            FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5ea03fa563cb900001d73863", startParams);
         });
 
-        demoButton.setOnClickListener(v -> FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5e4d123647edd60001055df1"));
+        demoButton.setOnClickListener(v -> FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5ea0401463cb900001d73865"));
 
-        profileButton.setOnClickListener(v -> FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5f3e1c9d8d4295000144d400"));
+        profileButton.setOnClickListener(v -> FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5ea0412663cb900001d73867"));
     }
 }
