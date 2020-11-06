@@ -27,14 +27,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
     packagingOptions {
         // libsdkcore.so是被加固过的，不能被压缩，否则加载动态库时会报错
         doNotStrip "*/x86/libsdkcore.so"
         doNotStrip "*/x86_64/libsdkcore.so"
+        doNotStrip "*/armeabi/libsdkcore.so"
         doNotStrip "*/armeabi-v7a/libsdkcore.so"
         doNotStrip "*/arm64-v8a/libsdkcore.so"
     }
@@ -48,5 +45,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.finogeeks.lib:finapplet:2.11.13'
+    implementation 'com.finogeeks.lib:finapplet:2.11.98'
 }
