@@ -1,6 +1,7 @@
 package com.finogeeks.mop.demo;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,17 +21,20 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button canvasButton = findViewById(R.id.btnCanvas);
         Button demoButton = findViewById(R.id.btnDemo);
-        Button profileButton = findViewById(R.id.btnProfile);
-        canvasButton.setOnClickListener(v -> {
-            Map<String, String> startParams = new HashMap<>();
-            startParams.put("path", "/pages/index/index");
-            FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5ea03fa563cb900001d73863", startParams);
+        demoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fa214a29a6a7900019b5cc1");
+            }
         });
 
-        demoButton.setOnClickListener(v -> FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5ea0401463cb900001d73865"));
-
-        profileButton.setOnClickListener(v -> FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5ea0412663cb900001d73867"));
+        Button profileButton = findViewById(R.id.btnProfile);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fa215459a6a7900019b5cc3");
+            }
+        });
     }
 }

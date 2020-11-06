@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.finogeeks.mop.demo"
+        applicationId "com.finogeeks.finclip.demo"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
@@ -13,9 +13,9 @@ android {
 
         multiDexEnabled true
 
-        buildConfigField "String", "APP_KEY", "\"22LyZEib0gLTQdU3MUauAVUHSFDdTToYDWCqr0AgPGwA\""
+        buildConfigField "String", "APP_KEY", "\"22LyZEib0gLTQdU3MUauATBwgfnTCJjdr7FCnywmAEM=\""
         // App Secret
-        buildConfigField "String", "APP_SECRET", "\"8c5c3c26420b7e66\""
+        buildConfigField "String", "APP_SECRET", "\"bdfd76cae24d4313\""
         // API服务地址
         buildConfigField "String", "API_URL", "\"https://mp.finogeeks.com\""
         // API服务前缀

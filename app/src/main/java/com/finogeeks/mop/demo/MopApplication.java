@@ -25,12 +25,11 @@ public class MopApplication extends MultiDexApplication {
         FinAppConfig.UIConfig uiConfig = new FinAppConfig.UIConfig();
         uiConfig.setHideNavigationBarCloseButton(true);
         FinAppConfig config = new FinAppConfig.Builder()
-                .setAppKey(BuildConfig.APP_KEY)
-                .setAppSecret(BuildConfig.APP_SECRET)
+                .setSdkKey(BuildConfig.APP_KEY)
+                .setSdkSecret(BuildConfig.APP_SECRET)
                 .setApiUrl(BuildConfig.API_URL)
                 .setApiPrefix(BuildConfig.API_PREFIX)
                 .setDebugMode(BuildConfig.DEBUG)
-                .setGlideWithJWT(false)
                 .setUiConfig(uiConfig)
                 .setEncryptionType(FinAppConfig.ENCRYPTION_TYPE_SM)
                 .build();
