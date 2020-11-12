@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">mopdemo</string>
+    <string name="fin_clip_charts_applet">绘图小程序</string>
     <string name="fin_clip_demo_applet">官方小程序</string>
     <string name="fin_clip_profile_applet">智能对账单</string>
 </resources>

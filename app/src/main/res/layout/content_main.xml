@@ -9,15 +9,26 @@
     tools:showIn="@layout/activity_main">
 
     <Button
-        android:id="@+id/btnDemo"
+        android:id="@+id/btnCharts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fin_clip_demo_applet"
-        app:layout_constraintBottom_toTopOf="@+id/btnProfile"
+        android:text="@string/fin_clip_charts_applet"
+        app:layout_constraintBottom_toTopOf="@+id/btnDemo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/btnDemo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/fin_clip_demo_applet"
+        app:layout_constraintBottom_toTopOf="@+id/btnProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCharts" />
 
     <Button
         android:id="@+id/btnProfile"

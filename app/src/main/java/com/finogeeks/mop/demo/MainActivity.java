@@ -21,16 +21,24 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button demoButton = findViewById(R.id.btnDemo);
-        demoButton.setOnClickListener(new View.OnClickListener() {
+        Button btnCharts = findViewById(R.id.btnCharts);
+        btnCharts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5facb3a52dcbff00017469bd");
+            }
+        });
+
+        Button btnDemo = findViewById(R.id.btnDemo);
+        btnDemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fa214a29a6a7900019b5cc1");
             }
         });
 
-        Button profileButton = findViewById(R.id.btnProfile);
-        profileButton.setOnClickListener(new View.OnClickListener() {
+        Button btnProfile = findViewById(R.id.btnProfile);
+        btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fa215459a6a7900019b5cc3");
