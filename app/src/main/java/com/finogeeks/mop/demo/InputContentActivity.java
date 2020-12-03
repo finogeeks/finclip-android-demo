@@ -11,6 +11,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+/**
+ * 输入内容页面
+ */
 public class InputContentActivity extends AppCompatActivity {
 
     public static final String EXTRA_NAME_INPUT_CONTENT = "input_content";

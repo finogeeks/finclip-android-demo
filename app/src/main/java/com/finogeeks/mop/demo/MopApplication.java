@@ -9,6 +9,7 @@ import com.finogeeks.lib.applet.client.FinAppClient;
 import com.finogeeks.lib.applet.client.FinAppConfig;
 import com.finogeeks.lib.applet.interfaces.FinCallback;
 import com.finogeeks.mop.demo.customapi.CustomApi;
+import com.finogeeks.mop.demo.customapi.CustomH5Api;
 
 public class MopApplication extends MultiDexApplication {
 
@@ -39,8 +40,10 @@ public class MopApplication extends MultiDexApplication {
             @Override
             public void onSuccess(Object result) {
                 Log.d(TAG, "init result : " + result);
-                // 注册小程序自定义API
+                // 注册自定义小程序API
                 FinAppClient.INSTANCE.getExtensionApiManager().registerApi(new CustomApi(MopApplication.this));
+                // 注册自定义H5 API
+                FinAppClient.INSTANCE.getExtensionWebApiManager().registerApi(new CustomH5Api(MopApplication.this));
             }
 
             @Override

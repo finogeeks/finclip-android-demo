@@ -17,19 +17,19 @@ import static android.app.Activity.RESULT_OK;
 import static com.finogeeks.mop.demo.InputContentActivity.EXTRA_NAME_INPUT_CONTENT;
 
 /**
- * 自定义小程序API
+ * 自定义H5 API
  * 跳转到原生APP的输入内容页面{@link InputContentActivity}，输入内容提交后，把输入的内容回传给小程序
  */
-public class CustomApi extends AbsApi {
+public class CustomH5Api extends AbsApi {
 
-    private static final int REQ_CODE_INPUT_CONTENT = 0x01;
+    private static final int REQ_CODE_INPUT_CONTENT = 0x02;
 
-    private static final String API_NAME_ON_NATIVE = "onNative";
+    private static final String API_NAME_USER_DEFINE_NATIVE = "user_define_native";
 
     @NonNull
     private Context mContext;
 
-    public CustomApi(@NonNull Context context) {
+    public CustomH5Api(@NonNull Context context) {
         mContext = context;
     }
 
@@ -38,7 +38,7 @@ public class CustomApi extends AbsApi {
      */
     @Override
     public String[] apis() {
-        return new String[]{API_NAME_ON_NATIVE};
+        return new String[]{API_NAME_USER_DEFINE_NATIVE};
     }
 
     /**
@@ -50,7 +50,7 @@ public class CustomApi extends AbsApi {
      */
     @Override
     public void invoke(String event, JSONObject param, ICallback callback) {
-        if (API_NAME_ON_NATIVE.equals(event)) {
+        if (API_NAME_USER_DEFINE_NATIVE.equals(event)) {
             Intent intent = new Intent(mContext, InputContentActivity.class);
             callback.startActivityForResult(intent, REQ_CODE_INPUT_CONTENT);
         }

@@ -49,7 +49,19 @@ public class MainActivity extends AppCompatActivity {
         btnCustomApi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fc8934aefb8c600019e9747");
+                Map<String, String> params = new HashMap<>();
+                params.put("path", "pages/index/index");
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fc8934aefb8c600019e9747", params);
+            }
+        });
+
+        Button btnH5Api = findViewById(R.id.btn_h5_api);
+        btnH5Api.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Map<String, String> params = new HashMap<>();
+                params.put("path", "pages/webview/webview");
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fc8934aefb8c600019e9747", params);
             }
         });
     }

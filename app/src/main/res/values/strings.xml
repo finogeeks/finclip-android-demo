@@ -3,7 +3,8 @@
     <string name="fin_clip_charts_applet">绘图小程序</string>
     <string name="fin_clip_demo_applet">官方小程序</string>
     <string name="fin_clip_profile_applet">智能对账单</string>
-    <string name="fin_clip_custom_api">自定义API</string>
+    <string name="fin_clip_custom_api">自定义小程序API示例</string>
+    <string name="fin_clip_custom_h5_api">自定义H5 API示例</string>
     <string name="fin_clip_input_content_hint">请输入内容</string>
     <string name="fin_clip_confirm">确定</string>
     <string name="fin_clip_get_input_content_failed">获取输入内容失败</string>
