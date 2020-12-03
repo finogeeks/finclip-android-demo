@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button btnCharts = findViewById(R.id.btnCharts);
+        Button btnCharts = findViewById(R.id.btn_charts);
         btnCharts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btnDemo = findViewById(R.id.btnDemo);
+        Button btnDemo = findViewById(R.id.btn_demo);
         btnDemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,11 +37,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btnProfile = findViewById(R.id.btnProfile);
+        Button btnProfile = findViewById(R.id.btn_profile);
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fa215459a6a7900019b5cc3");
+            }
+        });
+
+        Button btnCustomApi = findViewById(R.id.btn_custom_api);
+        btnCustomApi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fc8934aefb8c600019e9747");
             }
         });
     }

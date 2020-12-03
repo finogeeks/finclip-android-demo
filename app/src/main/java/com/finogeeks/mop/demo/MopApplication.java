@@ -8,6 +8,7 @@ import androidx.multidex.MultiDexApplication;
 import com.finogeeks.lib.applet.client.FinAppClient;
 import com.finogeeks.lib.applet.client.FinAppConfig;
 import com.finogeeks.lib.applet.interfaces.FinCallback;
+import com.finogeeks.mop.demo.customapi.CustomApi;
 
 public class MopApplication extends MultiDexApplication {
 
@@ -38,6 +39,8 @@ public class MopApplication extends MultiDexApplication {
             @Override
             public void onSuccess(Object result) {
                 Log.d(TAG, "init result : " + result);
+                // 注册小程序自定义API
+                FinAppClient.INSTANCE.getExtensionApiManager().registerApi(new CustomApi(MopApplication.this));
             }
 
             @Override
