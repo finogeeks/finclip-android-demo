@@ -1,6 +1,5 @@
 package com.finogeeks.mop.demo;
 
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.multidex.MultiDexApplication;
@@ -39,11 +38,13 @@ public class MopApplication extends MultiDexApplication {
         FinAppClient.INSTANCE.init(this, config, new FinCallback<Object>() {
             @Override
             public void onSuccess(Object result) {
-                Log.d(TAG, "init result : " + result);
+                Toast.makeText(MopApplication.this, "SDK初始化成功", Toast.LENGTH_SHORT).show();
                 // 注册自定义小程序API
                 FinAppClient.INSTANCE.getExtensionApiManager().registerApi(new CustomApi(MopApplication.this));
                 // 注册自定义H5 API
                 FinAppClient.INSTANCE.getExtensionWebApiManager().registerApi(new CustomH5Api(MopApplication.this));
+                // 设置IAppletHandler实现类
+                FinAppClient.INSTANCE.setAppletHandler(new AppletHandler(getApplicationContext()));
             }
 
             @Override
