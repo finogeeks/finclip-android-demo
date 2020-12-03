@@ -18,7 +18,7 @@ import static com.finogeeks.mop.demo.InputContentActivity.EXTRA_NAME_INPUT_CONTE
 
 /**
  * 自定义H5 API
- * 跳转到原生APP的输入内容页面{@link InputContentActivity}，输入内容提交后，把输入的内容回传给小程序
+ * 跳转到原生APP的输入内容页面{@link InputContentActivity}，输入内容提交后，把输入的内容回传给小程序中的网页
  */
 public class CustomH5Api extends AbsApi {
 
