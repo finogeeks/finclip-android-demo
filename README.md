@@ -19,7 +19,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url "https://jitpack.io" }
         maven {
             url "https://gradle.finogeeks.club/repository/applet/"
             credentials {
@@ -33,7 +32,7 @@ allprojects {
 ## 2、在gradle中依赖SDK
 
 ```groovy
-implementation 'com.finogeeks.lib:finapplet:2.0.77'
+implementation 'com.finogeeks.lib:finapplet:2.12.39'
 ```
 
 ## 3、 配置混淆规则
@@ -48,11 +47,10 @@ implementation 'com.finogeeks.lib:finapplet:2.0.77'
 我们强烈建议在`Application`中对SDK进行初始化，初始化SDK需要传入的各项参数如下：
 ```java
 FinAppConfig config = new FinAppConfig.Builder()
-        .setAppKey("SDKKEY")
-	      .setAppSecret("SECRET")
-        .setApiUrl("https://mp.finogeeks.com")
-        .setApiPrefix("/api/v1/mop/")
-        .setGlideWithJWT(false)
+        .setSdkKey("22LyZEib0gLTQdU3MUauATBwgfnTCJjdr7FCnywmAEM=") // 需替换为自己的SDK Key
+	    .setSdkSecret("bdfd76cae24d4313") // 需替换为自己的SDK Secret
+        .setApiUrl("https://mp.finogeeks.com") // 需替换为对应后端服务的地址
+        .setApiPrefix("/api/v1/mop/") // 需替换为对应后端服务的接口请求路由前缀
         .build();
 FinCallback<Object> callback = new FinCallback<Object>() {
     @Override
@@ -84,8 +82,9 @@ if (FinAppClient.INSTANCE.isFinAppProcess(this)) {
 }
 ```
 
-* **SDKKEY** 和 **Secret** 可以从免费一键部署的社区版的管理后台获取。
-* **apiServer** 为这里是小程序生态后端的服务地址也就是前文所输入的**IP:端口**。
-* **小程序id** 为在管理后台上架的小程序appid
+* **SDK Key** 和 **SDK Secret** 可以从免费一键部署的社区版的管理后台获取。
+* **apiUrl** 为小程平台后端服务的地址。
+* **apiPrefix** 为小程平台后端服务的接口请求路由前缀。
+* **小程序id** 为在管理后台上架的小程序appid。
 * 上述的参数可以在前文服务器部署的后台界面上获取，亦可以在没有部署服务端的情况下在[https://mp.finogeeks.com](https://mp.finogeeks.com)快速注册，免费获取。
 * 具体的操作方法请参考 [Android集成](https://mp.finogeeks.com/mop/document/runtime-sdk/sdk-integrate/android.html)
