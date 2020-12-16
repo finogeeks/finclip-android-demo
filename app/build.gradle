@@ -21,9 +21,29 @@ android {
         // API服务前缀
         buildConfigField "String", "API_PREFIX", "\"/api/v1/mop/\""
     }
+    signingConfigs {
+        debug {
+            keyAlias "FinClipDemo"
+            keyPassword "fino123456"
+            storeFile file("../finclip.jks")
+            storePassword "fino123456"
+        }
+        release {
+            keyAlias "FinClipDemo"
+            keyPassword "fino123456"
+            storeFile file("../finclip.jks")
+            storePassword "fino123456"
+        }
+    }
     buildTypes {
+        debug {
+            minifyEnabled true
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
