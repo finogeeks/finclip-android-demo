@@ -1,5 +1,6 @@
 package com.finogeeks.mop.demo;
 
+import android.graphics.Color;
 import android.widget.Toast;
 
 import androidx.multidex.MultiDexApplication;
@@ -25,6 +26,37 @@ public class MopApplication extends MultiDexApplication {
 
         FinAppConfig.UIConfig uiConfig = new FinAppConfig.UIConfig();
         uiConfig.setHideNavigationBarCloseButton(true);
+        uiConfig.setHideBackHome(true);
+        uiConfig.setHideForwardMenu(true);
+        uiConfig.setHideFeedbackAndComplaints(true);
+        uiConfig.setMoreMenuStyle(FinAppConfig.UIConfig.MORE_MENU_NORMAL);
+
+        FinAppConfig.UIConfig.CapsuleConfig capsuleConfig = new FinAppConfig.UIConfig.CapsuleConfig();
+        capsuleConfig.capsuleWidth = 86f;
+        capsuleConfig.capsuleHeight = 31f;
+        capsuleConfig.capsuleRightMargin = 15f;
+        capsuleConfig.capsuleCornerRadius = 15.5f;
+        capsuleConfig.capsuleBorderWidth = 0.5f;
+        capsuleConfig.capsuleBgLightColor = Color.BLACK;
+        capsuleConfig.capsuleBgDarkColor = Color.WHITE;
+        capsuleConfig.capsuleBorderLightColor = Color.parseColor("#88ffffff");
+        capsuleConfig.capsuleBorderDarkColor = Color.parseColor("#a5a9b4");
+
+        capsuleConfig.moreLightImage = R.mipmap.more_light;
+        capsuleConfig.moreDarkImage = R.mipmap.more_dark;
+        capsuleConfig.moreBtnWidth = 25f;
+        capsuleConfig.moreBtnLeftMargin = 11f;
+
+        capsuleConfig.closeLightImage = R.mipmap.close_light;
+        capsuleConfig.closeDarkImage = R.mipmap.close_dark;
+        capsuleConfig.closeBtnWidth = 25f;
+        capsuleConfig.closeBtnLeftMargin = 9f;
+
+        capsuleConfig.capsuleDividerLightColor = Color.parseColor("#88ffffff");
+        capsuleConfig.capsuleDividerDarkColor = Color.parseColor("#a5a9b4");
+
+        uiConfig.setCapsuleConfig(capsuleConfig);
+
         FinAppConfig config = new FinAppConfig.Builder()
                 .setSdkKey(BuildConfig.APP_KEY)
                 .setSdkSecret(BuildConfig.APP_SECRET)
