@@ -69,6 +69,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.finogeeks.lib:finapplet:2.13.48-alpha20210121V04'
+    implementation 'com.finogeeks.lib:finapplet:2.13.53'
     implementation "com.tencent.tbs.tbssdk:sdk:43967"
 }
