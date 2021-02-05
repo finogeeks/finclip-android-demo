@@ -129,7 +129,7 @@ FinAppClient.INSTANCE.getAppletApiManager().startApplet(this, "appid");
 ### 3、FinClip 有哪些典型案例？
 （如需了解更多案例，可以与小助手联系呀）
 
-![图片.png](https://www-cdn.finclip.com/images/yippi.jpeg)
+![图片.png](yippi.jpeg)
 <a name="2VK7o"></a>
 
 ## ⛳️ 获得更多指引
@@ -137,4 +137,4 @@ FinAppClient.INSTANCE.getAppletApiManager().startApplet(this, "appid");
 
 <a name="9K1zU"></a>
 ## ☎️ 与我们联系
-如想进入FinClip小程序技术群交流探讨，或了解更多使用场景，请添加小助手微信。<br />![](https://cdn.nlark.com/yuque/0/2021/png/679837/1612498062501-9cb75ea0-7567-46ac-a62c-1ad3397246fb.png#align=left&display=inline&height=213&margin=%5Bobject%20Object%5D&originHeight=611&originWidth=573&size=0&status=done&style=none&width=200)
+如想进入FinClip小程序技术群交流探讨，或了解更多使用场景，请添加小助手微信。<br />![](demo_readme2.png)
