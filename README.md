@@ -137,4 +137,4 @@ FinAppClient.INSTANCE.getAppletApiManager().startApplet(this, "appid");
 
 <a name="9K1zU"></a>
 ## ☎️ 与我们联系
-如想进入FinClip小程序技术群交流探讨，或了解更多使用场景，请添加小助手微信。<br />![](https://github.com/finogeeks/finclip-android-demo/blob/master/demo_readme2.png)
+如想进入FinClip小程序技术群交流探讨，或了解更多使用场景，请添加小助手微信。<br />![如图片未能正常展示，请直接手动添加wx号：liudiyang1212 ](https://github.com/finogeeks/finclip-android-demo/blob/master/demo_readme2.png)
