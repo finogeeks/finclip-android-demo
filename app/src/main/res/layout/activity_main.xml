@@ -67,8 +67,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/fin_clip_custom_h5_api"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_applet_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_custom_api" />
+
+    <Button
+        android:id="@+id/btn_applet_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/fin_clip_applet_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_h5_api" />
 </androidx.constraintlayout.widget.ConstraintLayout>
