@@ -133,7 +133,11 @@ FinAppClient.INSTANCE.getAppletApiManager().startApplet(this, "appid");
 <a name="2VK7o"></a>
 
 ## ⛳️ 获得更多指引
-✅ 部署一套私有化社区版：[https://www.finclip.com/mop/document/quickstart/Community-Edition.html](https://www.finclip.com/mop/document/quickstart/Community-Edition.html)<br />✅ 了解安卓相关API：[https://www.finclip.com/mop/document/runtime-sdk/sdk-api/android.html](https://www.finclip.com/mop/document/runtime-sdk/sdk-api/android.html)<br />✅ 了解更多安卓常见问题：[https://www.finclip.com/mop/document/faq/SDK/Android-SDK.html](https://www.finclip.com/mop/document/faq/SDK/Android-SDK.html)<br />
+
+✅ 部署一套私有化社区版：[https://www.finclip.com/mop/document/introduce/quickStart/cloud-server-deployment-guide.html](https://www.finclip.com/mop/document/introduce/quickStart/cloud-server-deployment-guide.html)</br>
+✅ 了解安卓相关API：[https://www.finclip.com/mop/document/runtime-sdk/android/android-api.html](https://www.finclip.com/mop/document/runtime-sdk/android/android-api.html)</br>
+✅ 了解更多安卓常见问题：[https://www.finclip.com/mop/document/runtime-sdk/android/android-issue.html](https://www.finclip.com/mop/document/runtime-sdk/android/android-issue.html)</br>
+
 
 <a name="9K1zU"></a>
 ## ☎️ 与我们联系
