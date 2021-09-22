@@ -1,25 +1,33 @@
-# 安卓工程 readme
+<p align="center">
+    <a href="https://www.finclip.com?from=github">
+    <img width="auto" src="https://www.finclip.com/mop/document/images/logo.png">
+    </a>
+</p>
 
-<a name="ulvpb"></a>
-## 🤩 FinClip是什么?
-有没有想过，能把一个已经开发好的微信小程序，放到你自己的APP里面运行？<br />想象一下，你只需要开发一次，就能把这个业务模块同时放到微信、自有App<br />甚至！你都不用开发业务，直接拖下来一个做好的业务模块，放到自己App里面，嘿！跑起来了！<br />听起来是不是有点不可思议？<br />没关系，这就是FinClip，帮助你实现这个不可思议！<br />
+<p align="center"> 
+    <strong>FinClip Android DEMO</strong></br>
+<p>
+<p align="center"> 
+        本项目提供在 Android 环境中运行小程序的 DEMO 样例
+<p>
 
-<a name="y9LBK"></a>
-## 🤔 你要怎么做？<br />
-只需要三个步骤：
+<p align="center"> 
+	👉 <a href="https://www.finclip.com?from=github">https://www.finclip.com/</a> 👈
+</p>
 
-1. get一个小程序！你可以：<br />自己开发一个微信小程序<br />or 在我们的 [小程序生态圈](https://mp.finogeeks.com/#/ecosystem) 中挑一个小程序（支持直接下载代码包）<br />or 直接使用我们提供的项目：[https://github.com/finogeeks/miniprogram-demo](https://github.com/finogeeks/miniprogram-demo)）
-1. 把finclip SDK集成到你的APP里面
-1. 登录[FinClip小程序开放平台](https://finclip.com/#/home)，完成关联
+-----
+## 🤔 FinClip 是什么?
 
-然后，见证奇迹，看看这个微信小程序直接在你的App里面运行起来的效果吧！<br />
+有没有**想过**，开发好的微信小程序能放在自己的 APP 里直接运行，只需要开发一次小程序，就能在不同的应用中打开它，是不是很不可思议？
 
-<a name="TaX3b"></a>
-## 🔜 五行代码让你的App运行小程序
-<a name="imw25"></a>
-### 1、配置 build.gradle
-在工程的`build.gradle`中添加maven仓库的地址：
-```
+有没有**试过**，在自己的 APP 中引入一个 SDK ，应用中不仅可以打开小程序，还能自定义小程序接口，修改小程序样式，是不是觉得更不可思议？
+
+这就是 FinClip ，就是有这么多不可思议！
+
+## ⚙️ 操作步骤
+### 第一步 配置 build.gradle 文件
+在工程的 `build.gradle` 中添加 maven 仓库的地址：
+```bash
 buildscript {
     repositories {
         google()
@@ -45,21 +53,17 @@ allprojects {
     }
 }
 ```
-<a name="62q3i"></a>
-### 2、在gradle中依赖SDK
-```
-implementation 'com.finogeeks.lib:finapplet:+'
-```
-<a name="zeaRN"></a>
-### 3、 配置混淆规则
-集成SDK之后，为了避免SDK中部分不能被混淆的代码被混淆，需要在工程的混淆规则配置文件中增加以下配置：
-```
--keep class com.finogeeks.** {*;}
-```
-<a name="C5AUZ"></a>
-### 4、SDK初始化
-我们强烈建议在`Application`中对SDK进行初始化，初始化SDK需要传入的各项参数如下：<br />❌ 不在application中初始化SDK也可以，但是一定要保证不在小程序进程中初始化小程序运行时SDK ❌
-```
+### 第二步 在 gradle 中依赖 SDK
+`implementation 'com.finogeeks.lib:finapplet:+'`
+
+### 第三步 配置混淆规则
+集成 SDK 之后，为了避免 SDK 中部分不能被混淆的代码被混淆，需要在工程的混淆规则配置文件中增加以下配置：
+
+``-keep class com.finogeeks.** {*;}``
+
+### 第四步 SDK初始化
+我们强烈建议在 `Application` 中对SDK进行初始化，初始化 SDK 需要传入的各项参数如下：
+```java
 FinAppConfig config = new FinAppConfig.Builder()
         .setAppKey("SDKKEY")
 	      .setAppSecret("SECRET")
@@ -72,73 +76,69 @@ FinCallback<Object> callback = new FinCallback<Object>() {
     public void onSuccess(Object result) {
         // SDK初始化成功
     }
+
     @Override
     public void onError(int code, String error) {
         // SDK初始化失败
         Toast.makeText(AppletApplication.this, "SDK初始化失败", Toast.LENGTH_SHORT).show();
     }
+
     @Override
     public void onProgress(int status, String error) {
+
     }
 };
 FinAppClient.INSTANCE.init(this, config, callback);
 ```
-SDK采用多进程机制实现，每个小程序运行在独立的进程中，即一个小程序对应一个进程，在初始化SDK时，要特别注意的一点是：
+ SDK 采用多进程机制实现，每个小程序运行在独立的进程中，即一个小程序对应一个进程。在初始化SDK时，要特别注意的一点是：**小程序进程在创建的时候,不需要执行任何初始化操作，即使是小程序SDK的初始化，也不需要在小程序进程中执行。**
 
-- 小程序进程在创建的时候不需要执行任何初始化操作，即使是小程序SDK的初始化，也不需要在小程序进程中执行
+> 举个例子🌰<br>
+    应用使用了一些第三方库，这些库需要在应用启动时先初始化，那么在 Application 中执行初始化时，只有当前进程为宿主进程时才需要初始化这些第三方库，小程序进程是不需要初始化这些库的。<br>
+    因此，在初始化SDK之前，一定要判断当前进程是哪一个进程，如果是小程序进程，就不进行任何操作了：
 
-**例如：**<br />应用使用了一些第三方库，这些库需要在应用启动时先初始化，那么在`Application`中执行初始化时，只有当前进程为宿主进程时才需要初始化这些第三方库，小程序进程是不需要初始化这些库的。<br />**因此**：在初始化SDK之前，一定要判断当前进程是哪一个进程，如果是小程序进程，就不进行任何操作了：
-```
+```java
 if (FinAppClient.INSTANCE.isFinAppProcess(this)) {
     return;
 }
 ```
-<a name="N63X1"></a>
-### 5、打开小程序
-```
+
+### 第五步 打开小程序
+```java
 FinAppClient.INSTANCE.getAppletApiManager().startApplet(this, "appid");
 ```
-❌ 不要修改包名、key、secret、AppID ❌<br />
-<br />但如果你需要把这些内容更改为自己的信息，你可以：
-
-- **SDKKEY** 和 **Secret** 可以从[ FinClip开放平台](https://finclip.com/#/home) 获取，你也可以直接点击进入[注册页面](https://finclip.com/#/register)
-- 进入平台后，在【应用管理】页面添加你自己的包名后，点击【复制】即可获得key\secret\apisever字段<br />
-- **ApiUrl** 和 **apiPrefix **是固定字段，请直接参考本demo
-- **小程序id** 为在管理后台上架的小程序AppID，需要在【小程序管理】中创建并在【应用管理】中关联 <br />（与微信小程序ID不一样哦！这里是特指finclip平台的ID）
 
 
-
-<a name="GZU3P"></a>
-## 📚 想要通关全程？这里是全程攻略
-直接跑demo虽然快，不过快速通关总会留下各种遗憾。<br />来吧，跟随全程攻略，了解一下“让App运行小程序”的全貌吧：
-<a name="Ri882"></a>
-### 1、FinClip 平台是什么？
-
-- Finclip平台是凡泰极客旗下的一款可私有化的小程序开放平台<br />
-- 凡泰极客借鉴微信、支付宝等主流小程序平台技术，进一步打造出可私有化的小程序开放平台产品 —— FinClip，该平台主要由两个客户端组成，一个是运营端，负责审核小程序内容，确保小程序的内容符合合规要求；另一个是企业端，负责开发小程序及小程序上下架管理。
-- FinClip 面向全行业发布，尤其适合金融业及其他需要自建数字化生态以及实现业务场景敏捷迭代的行业，帮助合作伙伴构建一个安全、合规、可控的小程序生态。
-<a name="sx7EX"></a>
-### 2、FinClip 平台的特色？
-
-- 多端上线：同一小程序可以同步上线多个宿主端（即小程序可上线的 APP），为开发者节省大量的人力和时间。
-- 合规引流：解决“行业应用嵌入第三方网络空间”的安全合规问题，合规引流，连接金融服务场景。
-- 方便快捷：相较于 APP，小程序开发周期短，开发成本低等特性让更多的开发者能够轻松、快速的参与到开发过程中，实现快速上线，快速起量。
-- 优质体验：小程序拥有优于现有 H5 页面的用户体验，帮助企业/机构获取更多渠道用户，同时节省获客成本。
-- 部署方式：满足合规监管多种部署方式，支持私有化部署、混合部署、行业云部署。
-<a name="l5pz3"></a>
-### 3、FinClip 有哪些典型案例？
-（如需了解更多案例，可以与小助手联系呀）
-
-![图片.png](https://github.com/finogeeks/finclip-android-demo/blob/master/yippi.jpeg)
-<a name="2VK7o"></a>
-
-## ⛳️ 获得更多指引
-
-✅ 部署一套私有化社区版：[https://www.finclip.com/mop/document/introduce/quickStart/cloud-server-deployment-guide.html](https://www.finclip.com/mop/document/introduce/quickStart/cloud-server-deployment-guide.html)</br>
-✅ 了解安卓相关API：[https://www.finclip.com/mop/document/runtime-sdk/android/android-api.html](https://www.finclip.com/mop/document/runtime-sdk/android/android-api.html)</br>
-✅ 了解更多安卓常见问题：[https://www.finclip.com/mop/document/runtime-sdk/android/android-issue.html](https://www.finclip.com/mop/document/runtime-sdk/android/android-issue.html)</br>
+- **SDK KEY** 和 **SDK SECRET** 可以从 [FinClip](https://finclip.com/#/home)  获取，点 [这里](https://finclip.com/#/register) 注册账号；
+- 进入平台后，在「应用管理」页面添加你自己的包名后，点击「复制」即可获得  key\secret\apisever 字段；
+- **apiServer** 和 **apiPrefix** 是固定字段，请直接参考本 DEMO ；
+- **小程序 ID** 是管理后台上架的小程序 APP ID，需要在「小程序管理」中创建并在「应用管理」中关联；
+> 小程序 ID 与 微信小程序ID 不一样哦！（这里是特指 FinClip 平台的 ID ）
 
 
-<a name="9K1zU"></a>
-## ☎️ 与我们联系
-如想进入FinClip小程序技术群交流探讨，或了解更多使用场景，请添加小助手微信。<br />![如图片未能正常展示，请直接手动添加wx号：liudiyang1212 ](https://github.com/finogeeks/finclip-android-demo/blob/master/demo_readme2.png)
+## 📋 集成文档
+[点击这里](https://www.finclip.com/mop/document/introduce/quickStart/intergration-guide.html#_2-android-%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90) 查看 Android 快速集成文档
+
+## 🔗 常用链接
+以下内容是您在 FinClip 进行开发与体验时，常见的问题与指引信息
+
+- [FinClip 官网](https://www.finclip.com/#/home)
+- [示例小程序](https://www.finclip.com/#/market)
+- [文档中心](https://www.finclip.com/mop/document/)
+- [SDK 部署指南](https://www.finclip.com/mop/document/introduce/quickStart/intergration-guide.html)
+- [小程序代码结构](https://www.finclip.com/mop/document/develop/guide/structure.html)
+- [iOS 集成指引](https://www.finclip.com/mop/document/runtime-sdk/ios/ios-integrate.html)
+- [Android 集成指引](https://www.finclip.com/mop/document/runtime-sdk/android/android-integrate.html)
+- [Flutter 集成指引](https://www.finclip.com/mop/document/runtime-sdk/flutter/flutter-integrate.html)
+
+## ☎️ 联系我们
+微信扫描下面二维码，关注官方公众号 **「凡泰极客」**，获取更多精彩内容。<br>
+<img width="150px" src="https://www.finclip.com/mop/document/images/ic_qr.svg">
+
+微信扫描下面二维码，邀请进官方微信交流群（加好友备注：finclip 咨询），获取更多精彩内容。<br>
+<img width="150px" src="https://finclip-homeweb-1251849568.cos.ap-guangzhou.myqcloud.com/images/ldy111.jpg">
+
+## Stargazers
+[![Stargazers repo roster for @finogeeks/finclip-android-demo](https://reporoster.com/stars/finogeeks/finclip-android-demo)](https://github.com/finogeeks/finclip-android-demo/stargazers)
+
+## Forkers
+[![Forkers repo roster for @finogeeks/finclip-android-demo](https://reporoster.com/forks/finogeeks/finclip-android-demo)](https://github.com/finogeeks/finclip-android-demo/network/members)
