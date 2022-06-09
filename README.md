@@ -156,8 +156,8 @@ FinAppClient.INSTANCE.getAppletApiManager().startApplet(this, "appid");
 微信扫描下面二维码，关注官方公众号 **「凡泰极客」**，获取更多精彩内容。<br>
 <img width="150px" src="https://www.finclip.com/mop/document/images/ic_qr.svg">
 
-微信扫描下面二维码，邀请进官方微信交流群（加好友备注：finclip 咨询），获取更多精彩内容。<br>
-<img width="150px" src="https://finclip-homeweb-1251849568.cos.ap-guangzhou.myqcloud.com/images/ldy111.jpg">
+微信扫描下面二维码，加入官方微信交流群，获取更多精彩内容。<br>
+<img width="150px" src="https://www-cdn.finclip.com/images/qrcode/qrcode_shequn_text.png">
 
 ## Stargazers
 [![Stargazers repo roster for @finogeeks/finclip-android-demo](https://reporoster.com/stars/finogeeks/finclip-android-demo)](https://github.com/finogeeks/finclip-android-demo/stargazers)
