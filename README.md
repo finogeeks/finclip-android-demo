@@ -140,7 +140,7 @@ FinAppClient.INSTANCE.getAppletApiManager().startApplet(this, "appid");
 ## 📋 集成文档
 [点击这里](https://www.finclip.com/mop/document/introduce/quickStart/intergration-guide.html#_2-android-%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90) 查看 Android 快速集成文档
 
-## 📘目录结构
+## 📘 目录结构
 
 ```
 .
