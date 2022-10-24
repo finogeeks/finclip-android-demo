@@ -9,4 +9,5 @@
     <string name="fin_clip_input_content_hint">请输入内容</string>
     <string name="fin_clip_confirm">确定</string>
     <string name="fin_clip_get_input_content_failed">获取输入内容失败</string>
+    <string name="scan_start_applet">扫码打开小程序</string>
 </resources>

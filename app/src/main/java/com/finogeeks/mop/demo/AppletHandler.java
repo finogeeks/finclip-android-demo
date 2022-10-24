@@ -2,6 +2,7 @@ package com.finogeeks.mop.demo;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import com.finogeeks.lib.applet.sdk.api.IAppletHandler;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -169,5 +171,41 @@ public class AppletHandler implements IAppletHandler {
     @Override
     public void shareAppMessage(@NotNull String appInfo, @Nullable Bitmap bitmap, @NotNull IAppletCallback callback) {
         Toast.makeText(mContext, "点击了转发按钮，去实现您的转发/分享逻辑吧", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void chooseAvatar(@NonNull IAppletCallback iAppletCallback) {
+
+    }
+
+    @Override
+    public boolean contact(@NonNull JSONObject jsonObject) {
+        return false;
+    }
+
+    @Override
+    public boolean feedback(@NonNull Bundle bundle) {
+        return false;
+    }
+
+    @Override
+    public void getJSSDKConfig(@NonNull JSONObject jsonObject, @NonNull IAppletCallback iAppletCallback) {
+
+    }
+
+    @Override
+    public void getPhoneNumber(@NonNull IAppletCallback iAppletCallback) {
+
+    }
+
+    @androidx.annotation.Nullable
+    @Override
+    public Map<String, String> getWebViewCookie(@NonNull String s) {
+        return null;
+    }
+
+    @Override
+    public boolean launchApp(@androidx.annotation.Nullable String s) {
+        return false;
     }
 }

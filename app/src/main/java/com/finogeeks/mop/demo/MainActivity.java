@@ -1,5 +1,6 @@
 package com.finogeeks.mop.demo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.finogeeks.lib.applet.client.FinAppClient;
+import com.finogeeks.lib.applet.sdk.api.request.IFinAppletRequest;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,11 +23,20 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Button btnScan = findViewById(R.id.btn_scan);
+        btnScan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ScanStartAppletActivity.class));
+            }
+        });
+
+
         Button btnCharts = findViewById(R.id.btn_charts);
         btnCharts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5facb3a52dcbff00017469bd");
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, IFinAppletRequest.Companion.fromAppId("5facb3a52dcbff00017469bd"),null);
             }
         });
 
@@ -33,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         btnDemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fa214a29a6a7900019b5cc1");
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this,IFinAppletRequest.Companion.fromAppId( "5fa214a29a6a7900019b5cc1"),null);
             }
         });
 
@@ -41,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fa215459a6a7900019b5cc3");
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, IFinAppletRequest.Companion.fromAppId("5fa215459a6a7900019b5cc3"),null);
             }
         });
 
@@ -51,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Map<String, String> params = new HashMap<>();
                 params.put("path", "pages/index/index");
-                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fc8934aefb8c600019e9747", params);
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, IFinAppletRequest.Companion.fromAppId("5fc8934aefb8c600019e9747").setStartParams(params),null);
             }
         });
 
@@ -61,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Map<String, String> params = new HashMap<>();
                 params.put("path", "pages/webview/webview");
-                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fc8934aefb8c600019e9747", params);
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "5fc8934aefb8c600019e9747", params,null);
             }
         });
 
@@ -69,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         btnAppletLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "60f051ea525ea10001c0bd22");
+                FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "60f051ea525ea10001c0bd22",null);
             }
         });
     }

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.finogeeks.mop.demo">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <application
         android:name=".MopApplication"
         android:allowBackup="false"
@@ -25,5 +26,16 @@
             android:name=".InputContentActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ScanStartAppletActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:label="@string/scan_start_applet" />
+        <activity
+            android:name=".ScanQRCodeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/scan_start_applet"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>
