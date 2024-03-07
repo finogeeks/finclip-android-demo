@@ -1,96 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="@android:color/white" />
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btn_scan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/scan_start_applet"
-        app:layout_constraintBottom_toTopOf="@+id/btn_demo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        android:text="@string/scan_start_applet" />
 
     <Button
         android:id="@+id/btn_charts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fin_clip_charts_applet"
-        app:layout_constraintBottom_toTopOf="@+id/btn_demo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        android:layout_marginTop="10dp"
+        android:text="@string/fin_clip_charts_applet" />
 
     <Button
         android:id="@+id/btn_demo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/fin_clip_demo_applet"
-        app:layout_constraintBottom_toTopOf="@+id/btn_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_charts" />
+        android:layout_marginTop="10dp"
+        android:text="@string/fin_clip_demo_applet" />
 
     <Button
         android:id="@+id/btn_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/fin_clip_profile_applet"
-        app:layout_constraintBottom_toTopOf="@+id/btn_custom_api"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_demo" />
+        android:layout_marginTop="10dp"
+        android:text="@string/fin_clip_profile_applet" />
 
     <Button
         android:id="@+id/btn_custom_api"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/fin_clip_custom_api"
-        app:layout_constraintBottom_toTopOf="@+id/btn_h5_api"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_profile" />
+        android:layout_marginTop="10dp"
+        android:text="@string/fin_clip_custom_api" />
 
     <Button
         android:id="@+id/btn_h5_api"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/fin_clip_custom_h5_api"
-        app:layout_constraintBottom_toTopOf="@+id/btn_applet_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_custom_api" />
+        android:layout_marginTop="10dp"
+        android:text="@string/fin_clip_custom_h5_api" />
 
     <Button
         android:id="@+id/btn_applet_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/fin_clip_applet_login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_h5_api" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginTop="10dp"
+        android:text="@string/fin_clip_applet_login" />
+
+    <Button
+        android:id="@+id/btn_component"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/fin_clip_component" />
+</LinearLayout>

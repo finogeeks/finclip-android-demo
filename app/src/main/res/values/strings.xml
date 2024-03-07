@@ -6,6 +6,7 @@
     <string name="fin_clip_custom_api">自定义小程序API示例</string>
     <string name="fin_clip_custom_h5_api">自定义H5 API示例</string>
     <string name="fin_clip_applet_login">小程序登录授权示例</string>
+    <string name="fin_clip_component">小组件示例</string>
     <string name="fin_clip_input_content_hint">请输入内容</string>
     <string name="fin_clip_confirm">确定</string>
     <string name="fin_clip_get_input_content_failed">获取输入内容失败</string>

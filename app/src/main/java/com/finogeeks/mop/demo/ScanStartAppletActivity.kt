@@ -39,7 +39,7 @@ open class ScanStartAppletActivity : AppCompatActivity() {
             if (resultCode == Activity.RESULT_OK && data != null) {
                 if (!isStartingApplet)
                     FinAppClient.appletApiManager.startApplet(this, IFinAppletRequest.fromQrCode(data.getStringExtra(ScanQRCodeActivity.EXTRA_RESULT)),
-                        object : FinCallback<String> {
+                        object : FinCallback<String?> {
                             override fun onSuccess(result: String?) {
                                 isStartingApplet = false
                                 runOnUiThread {

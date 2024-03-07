@@ -72,7 +72,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.finogeeks.lib:finapplet:2.39.5'
+    implementation 'com.finogeeks.lib:finapplet:2.43.8-alpha20240307v02'
     implementation 'cn.bingoogolapple:bga-qrcode-zbar:1.3.7'
 
 }

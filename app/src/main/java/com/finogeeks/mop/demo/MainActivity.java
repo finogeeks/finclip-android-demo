@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.finogeeks.lib.applet.client.FinAppClient;
 import com.finogeeks.lib.applet.sdk.api.request.IFinAppletRequest;
@@ -20,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         Button btnScan = findViewById(R.id.btn_scan);
         btnScan.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FinAppClient.INSTANCE.getAppletApiManager().startApplet(MainActivity.this, "60f051ea525ea10001c0bd22",null);
+            }
+        });
+
+        Button btnComponent = findViewById(R.id.btn_component);
+        btnComponent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ComponentActivity.class));
             }
         });
     }

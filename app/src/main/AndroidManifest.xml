@@ -14,7 +14,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,16 +26,19 @@
             android:name=".InputContentActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".ScanStartAppletActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:label="@string/scan_start_applet" />
+            android:label="@string/scan_start_applet"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ScanQRCodeActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/scan_start_applet"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ComponentActivity"
+            android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|keyboardHidden|uiMode"
+            android:theme="@style/Theme.AppCompat.Light" />
     </application>
 </manifest>
