@@ -16,8 +16,15 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
-        jcenter()
+        mavenCentral()
+        maven{ url 'https://maven.aliyun.com/repository/google'}
+        maven{ url 'https://maven.aliyun.com/repository/jcenter'}
+        maven {
+            url 'https://repo.spring.io/plugins-release/'
+        }
+        maven { url 'http://4thline.org/m2' }
+        maven { url "https://jitpack.io" }
+        maven { url "https://mvnrepository.com/artifact"}
 
         maven {
             url "https://gradle.finogeeks.club/repository/applet/"

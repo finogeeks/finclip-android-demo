@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.finogeeks.mop.demo">
+    package="com.finogeeks.testdemo">
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <application
-        android:name=".MopApplication"
+        android:name=".FinApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,29 +13,13 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".InputContentActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
-            android:name=".ScanStartAppletActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:label="@string/scan_start_applet" />
-        <activity
-            android:name=".ScanQRCodeActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/scan_start_applet"
-            android:screenOrientation="portrait" />
     </application>
 </manifest>
