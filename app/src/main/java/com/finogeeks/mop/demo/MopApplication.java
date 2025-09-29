@@ -57,7 +57,7 @@ public class MopApplication extends MultiDexApplication {
         uiConfig.setHideBackHome(true);
         uiConfig.setHideForwardMenu(true);
         uiConfig.setHideFeedbackAndComplaints(true);
-        uiConfig.setMoreMenuStyle(FinAppConfig.UIConfig.MORE_MENU_NORMAL);
+        uiConfig.setMoreMenuStyle(FinAppConfig.UIConfig.MORE_MENU_DEFAULT);
 
         FinAppConfig.UIConfig.CapsuleConfig capsuleConfig = new FinAppConfig.UIConfig.CapsuleConfig();
         capsuleConfig.capsuleWidth = 86f;
